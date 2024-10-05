@@ -6,9 +6,9 @@ const middlewares = jsonServer.defaults();
 
 // Cấu hình CORS
 const corsOptions = {
-  origin: '*', // Cho phép tất cả các nguồn (hoặc bạn có thể chỉ định nguồn cụ thể)
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Các phương thức HTTP cho phép
-  allowedHeaders: ['Content-Type', 'Authorization'] // Các headers tùy chỉnh
+  origin: '*', // Cho phép tất cả các nguồn (hoặc bạn có thể chỉ định nguồn)
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Cho phép các phương thức HTTP
+  allowedHeaders: ['Content-Type', 'Authorization'] // Cho phép các headers tùy chỉnh
 };
 
 // Sử dụng middleware CORS trước các route
@@ -29,6 +29,7 @@ server.use((req, res, next) => {
     req.body.createdAt = Date.now();
     req.body.updateAt = Date.now();
   }
+  // Tiếp tục với router của JSON Server
   next();
 });
 
@@ -37,6 +38,6 @@ server.use(router);
 
 // Cấu hình cổng cho server
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, '0.0.0.0', () => {  // Lắng nghe trên 0.0.0.0
+server.listen(PORT, () => {
   console.log(`JSON Server is running on port ${PORT}`);
 });
