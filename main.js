@@ -1,7 +1,18 @@
-const jsonServer = require('json-server');  // Đảm bảo dòng này đúng
+const jsonServer = require('json-server');
+const cors = require('cors');  // Import thư viện cors
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
+
+// Cấu hình CORS
+const corsOptions = {
+  origin: '*', // Cho phép tất cả các nguồn (hoặc bạn có thể chỉ định nguồn)
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Cho phép các phương thức HTTP
+  allowedHeaders: ['Content-Type', 'Authorization'] // Cho phép các headers tùy chỉnh
+};
+
+// Sử dụng middleware CORS trước các route
+server.use(cors(corsOptions));
 
 // Sử dụng các middleware mặc định (logger, static, cors và no-cache)
 server.use(middlewares);
