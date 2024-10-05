@@ -1,4 +1,4 @@
-const jsonServer = require('json-server');
+const jsonServer = require('json-server');  // Đảm bảo dòng này đúng
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
@@ -25,6 +25,8 @@ server.use((req, res, next) => {
 // Sử dụng router mà không cần tiền tố /api
 server.use(router);
 
-server.listen(3000, () => {
-  console.log('JSON Server is running on http://localhost:3000');
+// Cấu hình cổng cho server
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`JSON Server is running on port ${PORT}`);
 });
