@@ -59,7 +59,7 @@
     {
       "id": 1,
       "sku": "302012",
-      "name": "Handmade Pouchh",
+      "name": "Handmade Pouch",
       "sales": 120,
       "variant": "3 Variants",
       "quantity": 10,
@@ -235,7 +235,7 @@
     {
       "id": 12,
       "sku": "302023",
-      "name": "Noise-Cancelling Headphones",
+      "name": "Headphones",
       "sales": 150,
       "variant": "1 Variant",
       "quantity": 40,
@@ -305,7 +305,7 @@
       "total": "$121.00",
       "payment": "Mastercard",
       "method": "Flat Shipping",
-      "status": "Cancelled",
+      "status": "Processing",
       "invoice": "INV-32011",
       "shipping": "SHP-2011REG",
       "rewards": "480 point",
@@ -950,14 +950,6 @@
     },
     {
       "id": 16,
-      "name": "Socks",
-      "description": "Comfortable socks for everyday wear.",
-      "sales": "2,500",
-      "stock": 300,
-      "added": "19 Sep 2023"
-    },
-    {
-      "id": 17,
       "name": "Socks",
       "description": "Comfortable socks for everyday wear.",
       "sales": "2,500",
